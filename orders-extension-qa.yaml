@@ -1,0 +1,17 @@
+url: http://local.magento/index.php/rest/default/V1/orders
+httpmethod: POST
+static-headers:
+    Content-Type: application/json
+    Authorization: Bearer 54v19gtrw8ymuc1v4bmu88hzo7w5k443   
+    
+post-request-json-file-path: ../magento/order_payload.json
+post-request-json-dynamic-fields:
+
+
+#Vegeta
+rate: 1 #Vegeta attack rate
+duration: 5 #Vegeta attack duration
+
+#Dump
+dump-request-file-path: ../magento/magento_output/request_dump.json
+dump-attack-results-file-path: ../magento/magento_output/results.bin

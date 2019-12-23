@@ -1,0 +1,28 @@
+url: https://raavi-qa02.narvar.qa/api/v1/order
+httpmethod: POST
+static-headers:
+    Content-Type: application/json
+    Authorization: Bearer u2k1xtexbfsojhsgckflehc097fxvzrz
+    x-magento-store: tumi
+    x-magento-event: order/create
+    x-magento-retailer: tumi
+dynamic-headers:
+  x-magento-hmac-sha256: 
+    key: dHVtaTpiOTQzN2VmNy1jYWFiLTQ4MzEtYjY1My1kY2NiNDRlYWEwMGY=
+    function: hmac  
+
+post-request-json-file-path: ../magento/raavi-qa.json
+post-request-json-dynamic-fields:
+  increment_id: identity
+
+identity:
+  start: 7
+  increment: 1
+
+#Vegeta
+rate: 1 #Vegeta attack rate
+duration: 1 #Vegeta attack duration
+
+#Dump
+dump-request-file-path: ../magento/magento_output/request_dump.json
+dump-attack-results-file-path: ../magento/magento_output/results.bin
