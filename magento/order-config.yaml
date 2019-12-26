@@ -1,0 +1,13 @@
+url: http://magento-ce-23.narvar.qa/index.php/rest/default/V1/orders
+httpmethod: POST
+static-headers:
+    Content-Type: application/json
+    Authorization: Bearer fsexf38c8lnzpopdj0ztvvpzsqh6nxn9   
+post-request-json-file-path: ../magento/order-payload.json
+post-request-json-dynamic-fields:
+#Vegeta
+rate: 1 #Vegeta attack rate
+duration: 5 #Vegeta attack duration
+#Dump
+dump-request-file-path: ../magento/magento_output/request_dump.json
+dump-attack-results-file-path: ../magento/magento_output/results.bin
